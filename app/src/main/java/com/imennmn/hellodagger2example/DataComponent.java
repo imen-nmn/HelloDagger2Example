@@ -1,5 +1,7 @@
 package com.imennmn.hellodagger2example;
 
+import javax.inject.Named;
+
 import dagger.Component;
 
 /**
@@ -8,4 +10,6 @@ import dagger.Component;
 @Component(modules=DataModule.class) // the component is a bridge to make the @Inject and @Module knowing each other
 public interface DataComponent {
     void inject(MainActivity activity) ;
+
+    @Named("first_text") String takeText() ;
 }
