@@ -11,14 +11,18 @@ import dagger.Provides;
 
 @Module // It is a class provides dependancy object and help dagger to find where is the dependancy
 public class DataModule {
+//    @Provides // this is the method that will provide the dependancy
+//    Data provideData(){
+//       return new Data() ;
+//    }
 
-    @Provides
-    @Named("first_text") String getText(){
-        return "First Text" ;
-    }
+//    @Provides
+//    @Named("first_text") String getText(){
+//        return "First Text" ;
+//    }
 
     @Provides // this is the method that will provide the dependancy
-    Data provideData(@Named("first_text")  String  param){
+    Data provideData(@Named("text1") String  param){
        return new Data(param) ;
     }
 

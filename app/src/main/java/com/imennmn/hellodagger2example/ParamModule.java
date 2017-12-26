@@ -11,8 +11,18 @@ import dagger.Provides;
 
 @Module
 public class ParamModule {
+
     @Provides
-    @Named("first_text") String getText(){
+    @Named("text1")
+    String getText(){
         return "First Text" ;
     }
+
+    @Provides
+    @Named("text2")
+    String getText2(){
+        return "Second Text" ;
+    }
+
+
 }
