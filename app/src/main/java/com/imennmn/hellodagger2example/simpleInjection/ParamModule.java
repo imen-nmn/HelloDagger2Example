@@ -1,4 +1,4 @@
-package com.imennmn.hellodagger2example;
+package com.imennmn.hellodagger2example.simpleInjection;
 
 import javax.inject.Named;
 

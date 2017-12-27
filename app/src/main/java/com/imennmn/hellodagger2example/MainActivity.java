@@ -4,13 +4,16 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.imennmn.hellodagger2example.simpleInjection.DaggerDataComponent;
+import com.imennmn.hellodagger2example.simpleInjection.Data;
+
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
     @Inject // this keyword of request dependency . At compiling process, dagger will look at all of these annotations
             //to create the exact dependency
-    Data data ;
+            Data data ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

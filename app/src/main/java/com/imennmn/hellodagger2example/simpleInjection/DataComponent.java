@@ -1,4 +1,6 @@
-package com.imennmn.hellodagger2example;
+package com.imennmn.hellodagger2example.simpleInjection;
+
+import com.imennmn.hellodagger2example.MainActivity;
 
 import dagger.Component;
 
@@ -7,6 +9,5 @@ import dagger.Component;
  */
 @Component(modules={DataModule.class, ParamModule.class}) // the component is a bridge to make the @Inject and @Module knowing each other
 public interface DataComponent {
-
     void inject(MainActivity activity) ;
 }
