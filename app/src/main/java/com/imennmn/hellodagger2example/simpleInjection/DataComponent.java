@@ -9,5 +9,7 @@ import dagger.Component;
  */
 @Component(modules={DataModule.class, ParamModule.class}) // the component is a bridge to make the @Inject and @Module knowing each other
 public interface DataComponent {
+    Data getData() ;
+
     void inject(MainActivity activity) ;
 }

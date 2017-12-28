@@ -10,6 +10,8 @@ import com.imennmn.hellodagger2example.presenterInjection.DaggerPresenterCompone
 import com.imennmn.hellodagger2example.presenterInjection.MainPresenter;
 import com.imennmn.hellodagger2example.presenterInjection.MainView;
 import com.imennmn.hellodagger2example.presenterInjection.PresenterModule;
+import com.imennmn.hellodagger2example.simpleInjection.DaggerDataComponent;
+import com.imennmn.hellodagger2example.simpleInjection.Data;
 
 import javax.inject.Inject;
 
@@ -24,6 +26,10 @@ public class HomeActivity extends AppCompatActivity implements MainView {
 
     @Inject
     MainPresenter mainPresenter ;
+
+    @Inject
+    Data data ;
+
     TextView textView ;
 
     @Override
@@ -34,6 +40,7 @@ public class HomeActivity extends AppCompatActivity implements MainView {
 
         DaggerPresenterComponent.builder()
                 .presenterModule(new PresenterModule(this))
+                .dataComponent(DaggerDataComponent.create())
                 .build().inject(this);
 
         textView.setOnClickListener(new OnClickListener() {
@@ -49,6 +56,6 @@ public class HomeActivity extends AppCompatActivity implements MainView {
 
     @Override
     public void invokeRandomViewMethod(String msg) {
-        textView.setText(msg);
+        textView.setText(msg+data);
     }
 }
